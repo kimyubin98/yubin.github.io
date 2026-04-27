@@ -1,0 +1,111 @@
+.skills {
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* Skill group */
+.skill-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: border-color var(--transition);
+}
+
+.skill-group:hover { border-color: var(--border-accent); }
+
+.skill-group__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Skill bar */
+.skill-bar {
+  margin-bottom: 16px;
+}
+
+.skill-bar:last-child { margin-bottom: 0; }
+
+.skill-bar__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-bar__name {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.skill-bar__level {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.skill-bar__track {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  width: var(--target);
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+  border-radius: 2px;
+  animation: expand 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+  transform-origin: left;
+}
+
+@keyframes expand {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Tools */
+.skills__tools {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.skills__tools-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.skills__tools-prefix {
+  color: var(--accent-green);
+  margin-right: 8px;
+}
+
+.skills__tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .skills__grid { grid-template-columns: 1fr; }
+}
